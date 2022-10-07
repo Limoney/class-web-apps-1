@@ -1,0 +1,251 @@
+:root
+{
+    --primary: #1abc9c;
+    --primary-dark: #16a085;
+    --secondary: #34495e;
+    --secondary-dark: #2c3e50;
+    --special: #000;
+    --font: #ecf0f1;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    color: var(--font);
+    background-color: var(--secondary-dark);
+}
+.page-container
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+.page-logo
+{
+    background-color: var(--secondary);
+    padding: 10px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+.logo-color
+{
+    color: var(--primary)
+}
+.page-content-body
+{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+.page-nav
+{
+    background-color: var(--secondary);
+}
+.nav-elements
+{
+    transition: 0.3s cubic-bezier(.77,0,.18,1) all;
+    max-height: 5000px;
+}
+.nav-element
+{
+    color: var(--font);
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.05em;
+    transition: 0.3s cubic-bezier(.77,0,.18,1) all;
+}
+.nav-element:hover
+{
+    background-color: var(--primary-dark);
+    cursor:pointer;
+    padding: 15px;
+}
+.dropdown-items
+{
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.3s all ease-in-out;
+    background-color: var(--primary);
+}
+.dropdown-items .nav-element
+{
+    margin-left: 20px;
+}
+.dropdown-trigger:checked
+{
+    background-color: var(--primary-dark);
+}
+.dropdown-trigger:checked + .dropdown-items
+{
+    max-height: 5000px;
+    opacity: initial;
+    overflow: visible;
+}
+.page-content
+{
+    background-color: var(--secondary-dark);
+    flex-grow: 1;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+.news-preview
+{
+    background-color: var(--secondary);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 1px #2c3946;
+    margin-bottom: 20px;
+}
+.news-header
+{
+    font-size: 1.2em;
+    padding: 10px;
+    background-color: var(--primary-dark);
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+.news-content
+{
+    display: flex;
+    flex-direction: column;
+}
+.news-image
+{
+    overflow: hidden;
+}
+.news-image img
+{
+    width: 100%;
+    object-fit: cover;
+}
+.news-short-text
+{
+    padding: 10px;
+    word-wrap: break-word;
+    font-size: 1.05em;
+    letter-spacing: 0.5px;
+}
+.news-more
+{
+    text-align: right;
+    margin-right: 10px;
+}
+.news-footer
+{
+    padding: 10px;
+}
+.news-actions
+{
+    display: flex;
+    gap: 10px;
+}
+.ad-banner
+{
+    width: 200px;
+    min-width: 200px;
+    padding: 5px;
+    margin: 0 auto;
+}
+.ad-banner img
+{
+    width: 100%;
+    object-fit: cover;
+}
+.page-footer
+{
+    background-color: var(--primary-dark);
+    padding: 15px;
+    font-size: 1em;
+    text-align: center;
+}
+.is-hidden
+{
+    opacity: 0;
+    max-height:0 !important;
+    overflow: hidden;
+}
+.is-excluded
+{
+    display: none;
+}
+.button
+{
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: 0.25s ease-in-out all;
+    padding: 5px 10px;
+    font-size: 0.95em;
+    background-color: var(--primary);
+}
+.button:hover
+{
+    background-color: var(--primary-dark);
+    cursor:pointer;
+}
+
+@media screen and (min-width: 35.5em)	/*≥ 568px	*/
+{
+    .articles
+    {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 48em)	    /*≥ 768px	*/
+{
+    .page-nav
+    {
+        min-width: 200px;
+    }
+    .page-content-body
+    {
+        flex-direction: row;
+    }
+    .news-content
+    {
+        flex-direction: row;
+    }
+    #hamburger-label
+    {
+        display: none;
+    }
+    .articles
+    {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 64em)	    /*≥ 1024px	*/
+{
+    .articles
+    {
+        width: 67%;
+    }
+    .news-image
+    {
+        width: 400px;
+        min-width: 400px;
+    }
+    .news-image img
+    {
+        width: 100%;
+        height: 100%;
+    }
+}
+@media screen and (min-width: 80em)	    /*≥ 1280px	*/
+{
+    .articles
+    {
+        width: 67%;
+    }
+}
+@media screen and (min-width: 120em)   /* ≥ 1920px */
+{
+    .articles
+    {
+        width: 50%;
+    }
+}

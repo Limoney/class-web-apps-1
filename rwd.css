@@ -23,6 +23,15 @@
     {
         width: 100%;
     }
+    thead, table, tbody, tr, td
+    {
+        display: revert;
+        text-align: left;
+    }
+    td::before, tr::after 
+    {
+        content: none;
+    }
 }
 @media screen and (min-width: 64em)	    /*≥ 1024px	*/
 {

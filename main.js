@@ -9,7 +9,7 @@ let updateNav = () => {
     else
         closeNav();
 };
-let navState = JSON.parse(localStorage.getItem("openNav"));
+let navState = JSON.parse(localStorage.getItem("openNav")) ?? true;
 if(!navState)
     closeNav();
 
